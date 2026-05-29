@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Layers, Users, Building2, Layout, GitMerge, RefreshCw } from 'lucide-react';
+import { Layers, Users, Building2, LayoutGrid as Layout, GitMerge, RefreshCw } from 'lucide-react';
 
 const services = [
   {
