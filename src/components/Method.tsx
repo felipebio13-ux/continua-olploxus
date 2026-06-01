@@ -5,37 +5,37 @@ const steps = [
   {
     number: '01',
     icon: Rocket,
-    title: 'Aquisicao',
-    subtitle: 'Canais Estrategicos',
-    description: 'Construcao de multiplos canais de aquisicao para atrair oportunidades qualificadas de forma previsivel e escalavel. Sistema de captacao que funciona independente de indicacoes.',
-    features: ['Canais multiplataforma', 'Segmentacao avancada', 'Atracao qualificada', 'Volume previsivel'],
+    title: 'Aquisição',
+    subtitle: 'Canais Estratégicos',
+    description: 'Construção de múltiplos canais de aquisição para atrair oportunidades qualificadas de forma previsível e escalável. Sistema de captação que funciona independente de indicações.',
+    features: ['Canais multiplataforma', 'Segmentação avançada', 'Atração qualificada', 'Volume previsível'],
     accent: 'primary',
   },
   {
     number: '02',
     icon: Layers,
-    title: 'Estruturacao',
+    title: 'Estruturação',
     subtitle: 'Infraestrutura CRM',
-    description: 'Implementacao completa de CRM, automacoes, sistemas de rastreamento e organizacao comercial. Fundacao solida para suportar o crescimento sustentavel.',
-    features: ['CRM integrado', 'Automacao inteligente', 'Tracking granular', 'Processos documentados'],
+    description: 'Implementação completa de CRM, automações, sistemas de rastreamento e organização comercial. Fundação sólida para suportar o crescimento sustentável.',
+    features: ['CRM integrado', 'Automação inteligente', 'Tracking granular', 'Processos documentados'],
     accent: 'secondary',
   },
   {
     number: '03',
     icon: Target,
-    title: 'Conversao',
+    title: 'Conversão',
     subtitle: 'Performance Comercial',
-    description: 'Otimizacao de processos de vendas, qualificacao avancada de leads e elevacao da performance comercial. Transformacao de oportunidades em receita de forma consistente.',
-    features: ['Qualificacao precisa', 'Scripts treinados', 'Funil otimizado', 'Metricas claras'],
+    description: 'Otimização de processos de vendas, qualificação avançada de leads e elevação da performance comercial. Transformação de oportunidades em receita de forma consistente.',
+    features: ['Qualificação precisa', 'Scripts treinados', 'Funil otimizado', 'Métricas claras'],
     accent: 'primary',
   },
   {
     number: '04',
     icon: TrendingUp,
     title: 'Escala',
-    subtitle: 'Crescimento Sustentavel',
-    description: 'Expansao previsivel, otimizacao continua de crescimento e geracao de receita escalavel. Sistema que permite crescer sem perder controle.',
-    features: ['Expansao estruturada', 'Previsibilidade real', 'Otimizacao continua', 'Receita escalavel'],
+    subtitle: 'Crescimento Sustentável',
+    description: 'Expansão previsível, otimização contínua de crescimento e geração de receita escalável. Sistema que permite crescer sem perder controle.',
+    features: ['Expansão estruturada', 'Previsibilidade real', 'Otimização contínua', 'Receita escalável'],
     accent: 'secondary',
   },
 ];
@@ -49,17 +49,17 @@ export default function Method() {
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
         <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }} className="text-center mb-24">
-          <span className="tag inline-block mb-6">Metodologia Proprietaria</span>
+          <span className="tag inline-block mb-6">Metodologia Proprietária</span>
           <h2 className="text-4xl lg:text-5xl xl:text-6xl font-black tracking-tight mb-6" style={{ fontFamily: 'Space Grotesk, sans-serif' }}>
             Arquitetura de Crescimento{' '}
-            <span className="gradient-cyan text-glow-cyan">Loxus</span>
+            <span className="gradient-cyan text-glow-cyan">Lóxus</span>
           </h2>
           <div className="inline-block px-4 py-1.5 rounded-full border border-cyan-500/20 bg-cyan-500/5 mb-6">
-            <span className="text-xs text-cyan-400 font-semibold tracking-wider">METODOLOGIA PROPRIETARIA REGISTRADA</span>
+            <span className="text-xs text-cyan-400 font-semibold tracking-wider">METODOLOGIA PROPRIETÁRIA REGISTRADA</span>
           </div>
           <p className="text-gray-400 text-xl max-w-2xl mx-auto leading-relaxed font-light">
-            Um framework estrategico em 4 estagios para construir, estruturar, converter e escalar
-            seu crescimento empresarial deforma previsivel e sustentavel.
+            Um framework estratégico em 4 estágios para construir, estruturar, converter e escalar
+            seu crescimento empresarial de forma previsível e sustentável.
           </p>
         </motion.div>
 
@@ -128,8 +128,8 @@ export default function Method() {
         <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8, delay: 0.4 }} className="text-center mt-20">
           <div className="glass-cyan rounded-2xl p-8 max-w-3xl mx-auto luxury-border">
             <p className="text-gray-400 text-lg mb-6 font-light">
-              Cada estagio e construido sobre o anterior. Nenhum e opcional.
-              A metodologia funciona porque e um sistema completo, nao praticas isoladas.
+              Cada estágio é construído sobre o anterior. Nenhum é opcional.
+              A metodologia funciona porque é um sistema completo, não práticas isoladas.
             </p>
             <a href="#contato" className="btn-primary px-10 py-4.5 rounded-full text-base font-bold inline-flex items-center gap-3 group">
               <span>Implementar em Minha Empresa</span>
