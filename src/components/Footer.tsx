@@ -1,4 +1,5 @@
 import { MessageCircle, Mail, MapPin, ArrowUpRight } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 const quickLinks = [
   { label: 'Metodologia', href: '#metodologia' },
