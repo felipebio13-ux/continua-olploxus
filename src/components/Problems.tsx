@@ -1,55 +1,34 @@
 import { motion } from 'framer-motion';
-import { Zap, Users, Database, Target, TrendingUp, Settings, Rocket, Check } from 'lucide-react';
+import { Zap, Database, Target, TrendingUp, ArrowRight, Check } from 'lucide-react';
 
 const pillars = [
   {
-    icon: Rocket,
-    title: 'Arquitetura de Crescimento',
-    description: 'O núcleo da nossa metodologia. Um framework integrado que conecta aquisição, conversão, retenção e escala em um único sistema coeso e previsível.',
-    highlights: ['Framework Proprietário', 'Sistema Integrado', 'Resultados Comprovados', 'Crescimento Previsível'],
-    featured: true,
-  },
-  {
     icon: Zap,
     title: 'Aquisição de Clientes',
-    description: 'Múltiplos canais de captação qualificada para gerar oportunidades previsíveis e escaláveis, sem depender de indicações.',
+    description: 'Construímos múltiplos canais de captação qualificada para gerar oportunidades previsíveis — sem depender de indicações ou sazonalidade.',
     highlights: ['Canais Multiplataforma', 'Segmentação Avançada', 'Volume Previsível'],
-    featured: false,
+    cta: 'Quero gerar mais oportunidades',
   },
   {
     icon: Database,
     title: 'CRM e Automação',
-    description: 'Infraestrutura CRM completa com automações inteligentes, centralização de dados e rastreamento granular de toda a jornada comercial.',
+    description: 'Infraestrutura CRM completa com automações inteligentes que organizam sua operação comercial de ponta a ponta.',
     highlights: ['CRM Integrado', 'Automação Inteligente', 'Tracking Granular'],
-    featured: false,
+    cta: 'Quero organizar minha operação',
   },
   {
     icon: Target,
     title: 'Conversão Comercial',
-    description: 'Otimização de processos de vendas e qualificação avançada de leads para transformar oportunidades em receita de forma consistente.',
+    description: 'Processos de vendas otimizados e qualificação avançada que transformam oportunidades em receita de forma consistente.',
     highlights: ['Qualificação Precisa', 'Scripts Treinados', 'Funil Otimizado'],
-    featured: false,
-  },
-  {
-    icon: Users,
-    title: 'Reativação de Base',
-    description: 'Estratégia de reengajamento para clientes inativos. Recupere receita deixada na mesa e construa crescimento recorrente.',
-    highlights: ['Reengajamento Estratégico', 'Receita Recorrente', 'Valor Máximo da Base'],
-    featured: false,
-  },
-  {
-    icon: Settings,
-    title: 'Processos e Indicadores',
-    description: 'Documentação de processos comerciais e KPIs claros para garantir consistência operacional em toda a equipe.',
-    highlights: ['Processos Documentados', 'KPIs Claros', 'Consistência Operacional'],
-    featured: false,
+    cta: 'Quero vender mais',
   },
   {
     icon: TrendingUp,
     title: 'Expansão e Escala',
-    description: 'Crescimento estruturado e controlado que permite escalar receita sem perder qualidade, controle ou previsibilidade.',
+    description: 'Crescimento estruturado que permite escalar receita sem perder controle, qualidade ou previsibilidade operacional.',
     highlights: ['Crescimento Previsível', 'Expansão Estruturada', 'Receita Escalável'],
-    featured: false,
+    cta: 'Quero expandir minha empresa',
   },
 ];
 
@@ -58,50 +37,60 @@ const cardVariants = {
   show: { opacity: 1, y: 0, transition: { duration: 0.65, ease: [0.4, 0, 0.2, 1] } },
 };
 
-function PillarCard({ pillar, index }: { pillar: typeof pillars[0]; index: number }) {
+function PillarCard({ pillar, large }: { pillar: typeof pillars[0]; large: boolean }) {
   return (
     <motion.div
       variants={cardVariants}
       whileHover={{ y: -5, transition: { duration: 0.25 } }}
-      className={`group relative overflow-hidden rounded-2xl glass card-hover ${
-        pillar.featured ? 'md:col-span-1 lg:row-span-2' : ''
-      }`}
+      className="group relative overflow-hidden rounded-2xl glass card-hover flex flex-col h-full"
     >
       <div
         className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"
         style={{
-          background: index % 2 === 0
-            ? 'radial-gradient(ellipse at top left, rgba(0, 212, 255, 0.09) 0%, transparent 65%)'
-            : 'radial-gradient(ellipse at bottom right, rgba(0, 212, 255, 0.05) 0%, transparent 65%)',
+          background: 'radial-gradient(ellipse at top left, rgba(0, 212, 255, 0.09) 0%, transparent 65%)',
         }}
       />
 
-      <div className={`relative z-10 flex flex-col h-full p-6 ${pillar.featured ? 'lg:p-8' : ''}`}>
+      <div className={`relative z-10 flex flex-col h-full ${large ? 'p-8 lg:p-10' : 'p-7'}`}>
         <div
-          className="w-11 h-11 rounded-xl flex items-center justify-center mb-5 transition-all duration-300 group-hover:scale-110 shrink-0"
+          className="w-11 h-11 rounded-xl flex items-center justify-center mb-6 transition-all duration-300 group-hover:scale-110 shrink-0"
           style={{ background: 'rgba(0, 212, 255, 0.08)', border: '1px solid rgba(0, 212, 255, 0.15)' }}
         >
-          <pillar.icon size={pillar.featured ? 22 : 19} className="text-cyan-400" />
+          <pillar.icon size={20} className="text-cyan-400" />
         </div>
 
         <h3
-          className={`font-bold text-white mb-3 leading-tight ${pillar.featured ? 'text-xl lg:text-2xl' : 'text-base'}`}
+          className={`font-bold text-white mb-3 leading-tight ${large ? 'text-xl lg:text-2xl' : 'text-lg'}`}
           style={{ fontFamily: 'Space Grotesk, sans-serif' }}
         >
           {pillar.title}
         </h3>
 
-        <p className={`text-gray-400 leading-relaxed mb-5 ${pillar.featured ? 'text-sm lg:text-base' : 'text-xs'}`}>
+        <p className={`text-gray-400 leading-relaxed mb-6 ${large ? 'text-sm lg:text-base' : 'text-sm'}`}>
           {pillar.description}
         </p>
 
-        <div className="mt-auto space-y-2">
+        <div className="space-y-2 mb-8">
           {pillar.highlights.map((h, j) => (
             <div key={j} className="flex items-center gap-2.5">
               <Check size={13} className="text-cyan-400 shrink-0" strokeWidth={2.5} />
               <span className="text-xs text-gray-400">{h}</span>
             </div>
           ))}
+        </div>
+
+        <div className="mt-auto">
+          <a
+            href="#contato"
+            className="inline-flex items-center gap-2.5 text-sm font-semibold text-cyan-400 hover:text-white transition-colors duration-200 group/cta"
+          >
+            <span>{pillar.cta}</span>
+            <ArrowRight
+              size={15}
+              className="transition-transform duration-200 group-hover/cta:translate-x-1"
+              strokeWidth={2.5}
+            />
+          </a>
         </div>
       </div>
     </motion.div>
@@ -110,9 +99,8 @@ function PillarCard({ pillar, index }: { pillar: typeof pillars[0]; index: numbe
 
 export default function Problems() {
   const rows = [
-    { items: [pillars[0], pillars[1]], layout: 'grid-cols-1 md:grid-cols-[1.6fr_1fr]' },
-    { items: [pillars[2], pillars[3]], layout: 'grid-cols-1 md:grid-cols-[1fr_1.6fr]' },
-    { items: [pillars[4], pillars[5], pillars[6]], layout: 'grid-cols-1 md:grid-cols-3' },
+    { items: [0, 1], layout: 'grid-cols-1 md:grid-cols-[1.55fr_1fr]' },
+    { items: [2, 3], layout: 'grid-cols-1 md:grid-cols-[1fr_1.55fr]' },
   ];
 
   return (
@@ -126,17 +114,22 @@ export default function Problems() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-20"
+          className="mb-20"
         >
-          <span className="tag-premium inline-block mb-6">Nossa Metodologia</span>
-          <h2 className="text-4xl lg:text-5xl xl:text-6xl font-black tracking-tight mb-6" style={{ fontFamily: 'Space Grotesk, sans-serif' }}>
-            Os Pilares da{' '}
-            <span className="gradient-cyan">Arquitetura de Crescimento</span>
-          </h2>
-          <p className="text-gray-400 text-xl max-w-2xl mx-auto leading-relaxed font-light">
-            Cada pilar representa uma área crítica para construir um sistema de crescimento
-            previsível, integrado e escalável para sua empresa.
-          </p>
+          <div className="max-w-3xl">
+            <span className="tag-premium inline-block mb-6">Arquitetura de Crescimento</span>
+            <h2
+              className="text-4xl lg:text-5xl xl:text-6xl font-black tracking-tight mb-6"
+              style={{ fontFamily: 'Space Grotesk, sans-serif' }}
+            >
+              Um sistema integrado para{' '}
+              <span className="gradient-cyan">crescimento previsível</span>
+            </h2>
+            <p className="text-gray-400 text-xl leading-relaxed font-light">
+              Nossa metodologia conecta quatro pilares estratégicos em um único sistema coeso.
+              Cada pilar reforça os demais, criando crescimento sustentável e escalável.
+            </p>
+          </div>
         </motion.div>
 
         <div className="flex flex-col gap-5">
@@ -146,44 +139,22 @@ export default function Problems() {
               initial="hidden"
               whileInView="show"
               viewport={{ once: true, margin: '-60px' }}
-              transition={{ staggerChildren: 0.12, delayChildren: rowIdx * 0.05 }}
+              transition={{ staggerChildren: 0.14, delayChildren: 0.05 }}
               className={`grid gap-5 ${row.layout}`}
             >
-              {row.items.map((pillar, colIdx) => (
-                <PillarCard key={pillar.title} pillar={pillar} index={rowIdx + colIdx} />
+              {row.items.map((pillarIdx, colIdx) => (
+                <PillarCard
+                  key={pillars[pillarIdx].title}
+                  pillar={pillars[pillarIdx]}
+                  large={
+                    (rowIdx === 0 && colIdx === 0) ||
+                    (rowIdx === 1 && colIdx === 1)
+                  }
+                />
               ))}
             </motion.div>
           ))}
         </div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="mt-14"
-        >
-          <div className="glass-cyan rounded-3xl p-10 text-center relative overflow-hidden luxury-border">
-            <div className="blob-cyan absolute top-0 right-0 w-80 h-80 rounded-full opacity-30" />
-            <div className="relative z-10">
-              <span className="tag inline-block mb-5">Abordagem Integrada</span>
-              <h3 className="text-3xl lg:text-4xl font-black text-white mb-5" style={{ fontFamily: 'Space Grotesk, sans-serif' }}>
-                Cada pilar conectado a{' '}
-                <span className="gradient-cyan">um único objetivo</span>
-              </h3>
-              <p className="text-gray-400 text-lg max-w-xl mx-auto mb-8 font-light">
-                Não oferecemos soluções isoladas. Cada elemento funciona em sinergia para criar
-                um sistema completo de crescimento previsível e escalável para sua empresa.
-              </p>
-              <a href="#contato" className="btn-primary px-8 py-4 rounded-full text-sm font-bold inline-flex items-center gap-2 group">
-                <span>Implementar em Minha Empresa</span>
-                <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                </svg>
-              </a>
-            </div>
-          </div>
-        </motion.div>
       </div>
     </section>
   );
