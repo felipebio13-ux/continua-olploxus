@@ -124,24 +124,6 @@ export default function Services() {
           ))}
         </div>
 
-        <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8, delay: 0.3 }} className="text-center mt-16">
-          <div className="glass rounded-2xl p-6 inline-flex items-center gap-8 flex-wrap justify-center" style={{ borderColor: 'rgba(0, 212, 255, 0.08)' }}>
-            <div className="text-center">
-              <div className="text-3xl font-black gradient-cyan" style={{ fontFamily: 'Space Grotesk, sans-serif' }}>12+</div>
-              <div className="text-xs text-gray-400 font-medium">Meses de Implementacao</div>
-            </div>
-            <div className="h-10 w-px bg-white/10" />
-            <div className="text-center">
-              <div className="text-3xl font-black gradient-cyan" style={{ fontFamily: 'Space Grotesk, sans-serif' }}>180+</div>
-              <div className="text-xs text-gray-400 font-medium">Empresas Implementadas</div>
-            </div>
-            <div className="h-10 w-px bg-white/10" />
-            <div className="text-center">
-              <div className="text-3xl font-black gradient-cyan" style={{ fontFamily: 'Space Grotesk, sans-serif' }}>R$ 2.1Bi</div>
-              <div className="text-xs text-gray-400 font-medium">Receita Gerada</div>
-            </div>
-          </div>
-        </motion.div>
       </div>
     </section>
   );
